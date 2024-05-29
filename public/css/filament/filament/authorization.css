@@ -18,4 +18,52 @@ input[type="submit"]:hover {
     background-color: rgba(251, 191, 33, 1);
     color: #fff;
 }
+.select1 {
+    width: 50%;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    appearance: none;
+    background-color: #ffffff;
+    cursor: pointer;
+    color: #000000;
+}
+
+.select1:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2em rgba(251, 191, 33, 1);
+}
+
+.select1::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(251, 191, 33, 1);
+    transform: translateY(-50%);
+}
+a {
+    color: orange;
+}
+.key-site-input,.secret-key-input,.client-key-input,.server-key-input {
+    border: 2px solid #4caf50; /* зеленая граница */
+    border-radius: 4px; /* закругленные углы */
+    padding: 8px 16px; /* отступы вокруг текста */
+    font-size: 16px; /* размер текста */
+    width: 100%; /* ширина инпута */
+    color: black;
+    box-sizing: border-box; /* включаем отступы в ширину инпута */
+    -webkit-transition: border-color 0.3s ease; /* плавная анимация границы */
+    transition: border-color 0.3s ease;
+}
+
+.key-site-input:focus,.secret-key-input:focus,.client-key-input:focus,.server-key-input:focus {
+    border-color: #00bcd4; /* синяя граница при фокусе */
+    box-shadow: 0 0 5px 0 #00bcd4; /* тень при фокусе */
+}
 
