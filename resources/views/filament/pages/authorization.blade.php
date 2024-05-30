@@ -92,13 +92,77 @@
                 </x-filament-tables::container>
             </div>
             <div id="miniBlock2" style="display: none;margin-top: 30px;">
-                <label>Шлюз Flashcall</label>
-                <select class="select1">
-                    <option value="select1option0">Выберите</option>
-                    <option value="select1option2">SMS Агент</option>
-                    <option value="select1option3">SMS.RU</option>
-                    <option value="select1option4">Ucaller</option>
-                </select>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 10px">
+                    <div style="flex-basis: 45%; display: flex; flex-direction: column;">
+                        <div style="margin-bottom: 20px;">
+                            <div style="display: flex; flex-direction: column;">
+                                <label>Шлюз Flashcall</label>
+                                <select class="select1" onchange="showMiniBlock3(this.value)">
+                                    <option id="selector0" value="0">Выберите</option>
+                                    <option id="selector1" value="1">SMS Агент</option>
+                                    <option id="selector2" value="2">SMS.RU</option>
+                                    <option id="selector3" value="3">Ucaller</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div style="flex-grow: 1; overflow: auto;">
+                            <div id="miniBlock5" style="display:none;">
+                                <div class="flex flex-row leading-6 text-sm"
+                                     style="justify-items: center;margin-top: 20px">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <label>Логин</label>
+                                        <input type="text" class="login-input">
+                                    </div>
+                                </div>
+                                <div class="flex flex-row leading-6 text-sm"
+                                     style="justify-items: center; margin-top: 20px">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <label>Пароль</label>
+                                        <input type="text" class="password-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="miniBlock6" style="display:none;">
+                                <div class="flex flex-row leading-6 text-sm"
+                                     style="justify-items: center;margin-top: 20px">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <label>APP_ID сервиса</label>
+                                        <input type="text" class="app-id-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="miniBlock7" style="display:none;">
+                                <div class="flex flex-row leading-6 text-sm"
+                                     style="justify-items: center;margin-top: 20px">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <label>ID сервиса</label>
+                                        <input type="text" class="id-service-input">
+                                    </div>
+                                </div>
+                                <div class="flex flex-row leading-6 text-sm"
+                                     style="justify-items: center; margin-top: 20px">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <label>Секретный ключ сервиса</label>
+                                        <input type="text" class="secret-key-service-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="flex-basis: 45%; display: flex; flex-direction: column;">
+                        <div style="margin-bottom: 20px;">
+                            <div style="display: flex; flex-direction: column;">
+                                <label>Шлюз СМС</label>
+                                <select class="select2">
+                                    <option value="select2option0">Выберите</option>
+                                    <option value="select2option1">SMS Агент</option>
+                                    <option value="select2option2">SMS.RU</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </x-filament-tables::container>
         <x-filament-tables::container style="display: none;padding: 10px 25px;margin-top: 20px;" id="Block2">
@@ -223,8 +287,8 @@
                 Block1.style.display = "block";
                 Block2.style.display = "none";
             } else {
-                Block2.style.display = "block";
                 Block1.style.display = "none";
+                Block2.style.display = "block";
             }
         }
 
@@ -234,5 +298,27 @@
         document.getElementById("option8").addEventListener("change", function () {
             showMiniBlock2(false);
         });
+        function showMiniBlock3(choice) {
+            const Block1 = document.getElementById("miniBlock5");
+            const Block2 = document.getElementById("miniBlock6");
+            const Block3 = document.getElementById("miniBlock7");
+            if (choice == 1) {
+                Block1.style.display = "block";
+                Block2.style.display = "none";
+                Block3.style.display = "none";
+            } else if(choice == 2) {
+                Block1.style.display = "none";
+                Block2.style.display = "block";
+                Block3.style.display = "none";
+            } else if(choice == 3){
+                Block1.style.display = "none";
+                Block2.style.display = "none";
+                Block3.style.display = "block";
+            } else{
+                Block1.style.display = "none";
+                Block2.style.display = "none";
+                Block3.style.display = "none";
+            }
+        }
     </script>
 </x-filament-panels::page>

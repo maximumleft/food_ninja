@@ -18,8 +18,8 @@ input[type="submit"]:hover {
     background-color: rgba(251, 191, 33, 1);
     color: #fff;
 }
-.select1 {
-    width: 50%;
+.select1,.select2 {
+    width: 60%;
     padding: 0.5em;
     font-size: 1em;
     border: 1px solid #ccc;
@@ -28,14 +28,15 @@ input[type="submit"]:hover {
     background-color: #ffffff;
     cursor: pointer;
     color: #000000;
+    margin-top: 20px
 }
 
-.select1:focus {
+.select1:focus,.select2:focus {
     outline: none;
     box-shadow: 0 0 0 0.2em rgba(251, 191, 33, 1);
 }
 
-.select1::after {
+.select1::after,.select2::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -50,7 +51,9 @@ input[type="submit"]:hover {
 a {
     color: orange;
 }
-.key-site-input,.secret-key-input,.client-key-input,.server-key-input {
+.key-site-input,.secret-key-input,.client-key-input,
+.server-key-input,.login-input,.password-input,
+.app-id-input,.secret-key-service-input,.id-service-input{
     border: 2px solid #4caf50; /* зеленая граница */
     border-radius: 4px; /* закругленные углы */
     padding: 8px 16px; /* отступы вокруг текста */
@@ -62,7 +65,9 @@ a {
     transition: border-color 0.3s ease;
 }
 
-.key-site-input:focus,.secret-key-input:focus,.client-key-input:focus,.server-key-input:focus {
+.key-site-input:focus,.secret-key-input:focus,.client-key-input:focus,
+.server-key-input:focus,.login-input:focus,.password-input:focus,
+.app-id-input:focus,.secret-key-service-input:focus,.id-service-input:focus{
     border-color: #00bcd4; /* синяя граница при фокусе */
     box-shadow: 0 0 5px 0 #00bcd4; /* тень при фокусе */
 }
