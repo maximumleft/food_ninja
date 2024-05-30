@@ -53,7 +53,9 @@ a {
 }
 .key-site-input,.secret-key-input,.client-key-input,
 .server-key-input,.login-input,.password-input,
-.app-id-input,.secret-key-service-input,.id-service-input{
+.app-id-input,.secret-key-service-input,.id-service-input,
+.login-sms-input,.password-sms-input,.name-sms-input,
+.app-id-service-sms-input{
     border: 2px solid #4caf50; /* зеленая граница */
     border-radius: 4px; /* закругленные углы */
     padding: 8px 16px; /* отступы вокруг текста */
@@ -67,7 +69,9 @@ a {
 
 .key-site-input:focus,.secret-key-input:focus,.client-key-input:focus,
 .server-key-input:focus,.login-input:focus,.password-input:focus,
-.app-id-input:focus,.secret-key-service-input:focus,.id-service-input:focus{
+.app-id-input:focus,.secret-key-service-input:focus,.id-service-input:focus,
+.login-sms-input:focus,.password-sms-input:focus,.name-sms-input:focus,
+.app-id-service-sms-input:focus,.name-sms-ru-input:focus{
     border-color: #00bcd4; /* синяя граница при фокусе */
     box-shadow: 0 0 5px 0 #00bcd4; /* тень при фокусе */
 }

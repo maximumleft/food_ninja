@@ -34,36 +34,10 @@ use Illuminate\Support\Facades\Auth;
     {
         $this->user = Auth::user();
     }
-    protected function getForms(): array
-    {
-        return [
-            'radioForm',
-            'gatewayForm',
-        ];
-    }
 
-    public function radioForm(Form $form): Form
+    public function form(Form $form): Form
     {
         return $form->schema([
-
-        ]);
-    }
-    public function gatewayForm(Form $form): Form
-    {
-        return $form->schema([
-            Repeater::make('members')
-                ->schema([
-                    TextInput::make('name')->required(),
-                    Select::make('role')
-                        ->options([
-                            'member' => 'Member',
-                            'administrator' => 'Administrator',
-                            'owner' => 'Owner',
-                        ])
-                        ->required(),
-                ])
-                ->columns(2),
-
 
         ]);
     }

@@ -153,11 +153,58 @@
                         <div style="margin-bottom: 20px;">
                             <div style="display: flex; flex-direction: column;">
                                 <label>Шлюз СМС</label>
-                                <select class="select2">
-                                    <option value="select2option0">Выберите</option>
-                                    <option value="select2option1">SMS Агент</option>
-                                    <option value="select2option2">SMS.RU</option>
+                                <select class="select2" onchange="showMiniBlock4(this.value)">
+                                    <option value="0">Выберите</option>
+                                    <option value="1">SMS Агент</option>
+                                    <option value="2">SMS.RU</option>
                                 </select>
+                            </div>
+                            <div style="flex-grow: 1; overflow: auto;">
+                                <div id="miniBlock8" style="display:none;">
+                                    <div class="flex flex-row leading-6 text-sm"
+                                         style="justify-items: center;margin-top: 20px">
+                                        <div style="display: flex; flex-direction: column;">
+                                            <label>Логин</label>
+                                            <input type="text" class="login-sms-input">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row leading-6 text-sm"
+                                         style="justify-items: center; margin-top: 20px">
+                                        <div style="display: flex; flex-direction: column;">
+                                            <label>Пароль</label>
+                                            <input type="text" class="password-sms-input">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row leading-6 text-sm"
+                                         style="justify-items: center; margin-top: 20px">
+                                        <div style="display: flex; flex-direction: column;">
+                                            <label>Имя отправителя</label>
+                                            <input type="text" class="name-sms-input">
+                                        </div>
+                                    </div>
+                                    <div style="margin-top: 20px">
+                                        <span>Имя отправителя обязательно и должно быть зарегистрировано в SMS Агент</span>
+                                    </div>
+                                </div>
+                                <div id="miniBlock9" style="display:none;">
+                                    <div class="flex flex-row leading-6 text-sm"
+                                         style="justify-items: center;margin-top: 20px">
+                                        <div style="display: flex; flex-direction: column;">
+                                            <label>APP_ID сервиса</label>
+                                            <input type="text" class="app-id-service-sms-input">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row leading-6 text-sm"
+                                         style="justify-items: center; margin-top: 20px">
+                                        <div style="display: flex; flex-direction: column;">
+                                            <label>Имя отправителя</label>
+                                            <input type="text" class="name-sms-ru-input">
+                                        </div>
+                                    </div>
+                                    <div style="margin-top: 20px">
+                                        <span>Имя отправителя обязательно и должно быть зарегистрировано в SMS.RU</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -298,6 +345,7 @@
         document.getElementById("option8").addEventListener("change", function () {
             showMiniBlock2(false);
         });
+
         function showMiniBlock3(choice) {
             const Block1 = document.getElementById("miniBlock5");
             const Block2 = document.getElementById("miniBlock6");
@@ -318,6 +366,21 @@
                 Block1.style.display = "none";
                 Block2.style.display = "none";
                 Block3.style.display = "none";
+            }
+        }
+        function showMiniBlock4(choice) {
+            const Block1 = document.getElementById("miniBlock8");
+            const Block2 = document.getElementById("miniBlock9");
+
+            if (choice == 0) {
+                Block1.style.display = "none";
+                Block2.style.display = "none";
+            } else if(choice == 1) {
+                Block1.style.display = "block";
+                Block2.style.display = "none";
+            } else if(choice == 2){
+                Block1.style.display = "none";
+                Block2.style.display = "block";
             }
         }
     </script>
