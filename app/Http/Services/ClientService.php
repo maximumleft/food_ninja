@@ -9,8 +9,8 @@ class ClientService
 {
     public function replacePhone(array $clientData): array|string|null
     {
-        if (str_starts_with($clientData['phone'], '+7')) {
-            $clientData['phone'] = '8' . substr($clientData['phone'], 2);
+        if (str_starts_with($clientData['phone'], '+7')||str_starts_with($clientData['phone'], '8')) {
+            $clientData['phone'] = '7' . substr($clientData['phone'], 2);
         }
         return preg_replace('/\D/', '', $clientData['phone']);
     }
