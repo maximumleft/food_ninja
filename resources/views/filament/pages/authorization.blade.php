@@ -347,41 +347,16 @@
         });
 
         function showMiniBlock3(choice) {
-            const Block1 = document.getElementById("miniBlock5");
-            const Block2 = document.getElementById("miniBlock6");
-            const Block3 = document.getElementById("miniBlock7");
-            if (choice == 1) {
-                Block1.style.display = "block";
-                Block2.style.display = "none";
-                Block3.style.display = "none";
-            } else if(choice == 2) {
-                Block1.style.display = "none";
-                Block2.style.display = "block";
-                Block3.style.display = "none";
-            } else if(choice == 3){
-                Block1.style.display = "none";
-                Block2.style.display = "none";
-                Block3.style.display = "block";
-            } else{
-                Block1.style.display = "none";
-                Block2.style.display = "none";
-                Block3.style.display = "none";
-            }
+            const blocks = [document.getElementById("miniBlock5"), document.getElementById("miniBlock6"), document.getElementById("miniBlock7")];
+            blocks.forEach((block, index) => {
+                block.style.display = index + 1 == choice? "block" : "none";
+            });
         }
         function showMiniBlock4(choice) {
-            const Block1 = document.getElementById("miniBlock8");
-            const Block2 = document.getElementById("miniBlock9");
-
-            if (choice == 0) {
-                Block1.style.display = "none";
-                Block2.style.display = "none";
-            } else if(choice == 1) {
-                Block1.style.display = "block";
-                Block2.style.display = "none";
-            } else if(choice == 2){
-                Block1.style.display = "none";
-                Block2.style.display = "block";
-            }
+            const blocks = [document.getElementById("miniBlock8"), document.getElementById("miniBlock9")];
+            blocks.forEach((block, index) => {
+                block.style.display = index + 1 == choice? "block" : "none";
+            });
         }
     </script>
 </x-filament-panels::page>
